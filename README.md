@@ -27,7 +27,10 @@ $$\hat{q}_{b} = \text{arg\,max}(q_{b})$$
 
 5. The strong augmentation of the images is then predicted, generating a new probability distribution that includes the pseudo-label of the weakly augmented version of the same image. A new loss function, $l_{u}$, is defined as the average of the cross-entropy between the obtained label and the pseudo-label of the weakly augmented image:
 
-$$l_{u} = \frac{1}{\mu B} \sum_{b=1}^{B} 1(\max(q_{b}) \geq \tau)H\left(\hat{q}_{b},p_{m}(y | A(u_{b}))\right)$$
+
+```math
+l_{u} = \frac{1}{\mu B} \sum_{b=1}^{B} 1(\max(q_{b}) \geq \tau)H\left(\hat{q}_{b},p_{m}(y | A(u_{b}))\right)
+```
 
 6. The total loss minimized by the model is:
 
