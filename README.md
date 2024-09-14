@@ -21,19 +21,13 @@ $$
 
 4. We use the model to predict each unlabeled image's ,$b$ , class, generating a probability to each one of the possible classes of the problem. If the largest probability of this distribution is above a certain threshold $\tau$, it is considered a pseudo-label $\hat{q}_{b}$ and will be used in the SSL improving of the model;
 
-$$
-q_{b} = p_{m} (y | \alpha(u_{b}))
-$$
+$$q_{b} = p_{m} (y | \alpha(u_{b}))$$
 
-$$
-\hat{q}_{b} = \text{arg\,max}(q_{b})
-$$
+$$\hat{q}_{b} = \text{arg\,max}(q_{b})$$
 
 5. The strong augmentation of the images is then predicted, generating a new probability distribution that includes the pseudo-label of the weakly augmented version of the same image. A new loss function, $l_{u}$, is defined as the average of the cross-entropy between the obtained label and the pseudo-label of the weakly augmented image:
 
-$$
-l_{u} = \frac{1}{\mu B} \sum_{b=1}^{B} 1(\max(q_{b}) \geq \tau)H\left(\hat{q}_{b},p_{m}(y | A(u_{b}))\right)
-$$
+$$l_{u} = \frac{1}{\mu B} \sum_{b=1}^{B} 1(\max(q_{b}) \geq \tau)H\left(\hat{q}_{b},p_{m}(y | A(u_{b}))\right)$$
 
 6. The total loss minimized by the model is:
 
