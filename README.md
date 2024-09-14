@@ -23,7 +23,9 @@ $$
 
 $$q_{b} = p_{m} (y | \alpha(u_{b}))$$
 
-$$\hat{q}_{b} = \text{arg\,max}(q_{b})$$
+```math
+\hat{q}_{b} = \text{arg\,max}(q_{b})
+```
 
 5. The strong augmentation of the images is then predicted, generating a new probability distribution that includes the pseudo-label of the weakly augmented version of the same image. A new loss function, $l_{u}$, is defined as the average of the cross-entropy between the obtained label and the pseudo-label of the weakly augmented image:
 
